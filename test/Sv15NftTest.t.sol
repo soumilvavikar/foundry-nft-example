@@ -5,6 +5,11 @@ import {Test} from "forge-std/Test.sol";
 import {DeploySv15Nft} from "../script/DeploySv15Nft.s.sol";
 import {Sv15Nft} from "../src/Sv15Nft.sol";
 
+/**
+ * @title The test class to test the Sv15Nft token.
+ * @author Soumil Vavikar
+ * @notice NA
+ */
 contract Sv15NftTest is Test {
     DeploySv15Nft public deployer;
     Sv15Nft public sv15Nft;
