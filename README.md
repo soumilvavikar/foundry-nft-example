@@ -34,7 +34,7 @@ Implement the contract by inheriting the `ERC721` contract from `Openzeppelin`.
 contract Sv15Nft is ERC721
 ```
 
-and implement the `mint` and `tokenUri` fucntions. Check the `Sv15Nft.sol` for the implementations. Once done, build the project. 
+and implement the `mint` and `tokenUri` functions. Check the `Sv15Nft.sol` for the implementations. Once done, build the project.
 
 ```shell
 forge build
@@ -45,7 +45,7 @@ make build
 
 ### Test the Contract
 
-Write tests to test the 2 functions added in the contract to ensure the NFT is minted as expected and also the correct tokenUri is returned with the tokenId is passed.\
+Write tests to test the 2 functions added in the contract to ensure the NFT is minted as expected and also the correct tokenUri is returned with the tokenId is passed.
 
 ```shell
 forge test
@@ -68,7 +68,6 @@ Setup the `.env` file. Refer to the `.env.sample` file for the same.
 anvil --fork-url $INFURA_RPC_URL --fork-block-number $FORKED_BLOCK_NUMBER
 
 # OR (If you don't want to fork the testnet or mainnet)
-
 anvil
 ```
 
