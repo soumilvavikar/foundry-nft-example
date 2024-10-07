@@ -1,0 +1,39 @@
+{
+    "name": "bike",
+    "description": "Road Bike - Trek Madone SLR7",
+    "image": "https://ipfs.io/ipfs/QmXW1JcRvBuzW7v5KkxyWxrsWWtJJiGQNTdCuUceYC2Nw2?filename=bike.png",
+    "attributes": [
+        {
+            "trait_type": "Bike Color",
+            "value": "Dark Grey"
+        },
+        {
+            "trait_type": "Make",
+            "value": "Trek"
+        },
+        {
+            "trait_type": "Model",
+            "value": "Madone SLR7"
+        },
+        {
+            "trait_type": "Year",
+            "value": "2022"
+        },
+        {
+            "trait_type": "Generation",
+            "value": "Gen 6"
+        },
+        {
+            "trait_type": "Groupset",
+            "value": "Ultegra Di2"
+        },
+        {
+            "trait_type": "Wheels",
+            "value": "Bontrager Aeolus 51"
+        },
+        {
+            "trait_type": "Image Background",
+            "value": "White wall with logo of Brandwein's Bagel"
+        }
+    ]
+}
