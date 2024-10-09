@@ -4,6 +4,7 @@ pragma solidity ^0.8.27;
 import {Script} from "forge-std/Script.sol";
 import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
 import {Sv15Nft} from "../src/Sv15Nft.sol";
+import {MoodNft} from "../src/MoodNft.sol";
 
 /**
  * @title Mint the Sv15Nft by reading the latest deployed contract and passing the ipfs location of the metadata for the NFT.
@@ -32,6 +33,36 @@ contract MintSv15Nft is Script {
     function mintSv15NftOnContract(address contractAdd) public {
         vm.startBroadcast();
         Sv15Nft(contractAdd).mintSv15Nft(BIKE);
+        vm.stopBroadcast();
+    }
+}
+
+contract MintMoodNft is Script {
+    function run() external {
+        address mostRecentlyDeployedMoodNft = DevOpsTools
+            .get_most_recent_deployment("MoodNft", block.chainid);
+        mintNftOnContract(mostRecentlyDeployedMoodNft);
+    }
+
+    function mintNftOnContract(address moodNftAddress) public {
+        vm.startBroadcast();
+        MoodNft(moodNftAddress).mintNft();
+        vm.stopBroadcast();
+    }
+}
+
+contract FlipMoodNft is Script {
+    uint256 public constant TOKEN_ID_TO_FLIP = 0;
+
+    function run() external {
+        address mostRecentlyDeployedMoodNft = DevOpsTools
+            .get_most_recent_deployment("MoodNft", block.chainid);
+        flipMoodNft(mostRecentlyDeployedMoodNft);
+    }
+
+    function flipMoodNft(address moodNftAddress) public {
+        vm.startBroadcast();
+        MoodNft(moodNftAddress).flipMood(TOKEN_ID_TO_FLIP);
         vm.stopBroadcast();
     }
 }
