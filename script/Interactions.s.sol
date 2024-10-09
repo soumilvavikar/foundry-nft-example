@@ -52,7 +52,7 @@ contract MintMoodNft is Script {
 }
 
 contract FlipMoodNft is Script {
-    uint256 public constant TOKEN_ID_TO_FLIP = 0;
+    uint256 public constant TOKEN_ID_TO_FLIP = 4;
 
     function run() external {
         address mostRecentlyDeployedMoodNft = DevOpsTools

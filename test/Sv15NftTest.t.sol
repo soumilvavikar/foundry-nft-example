@@ -2,8 +2,8 @@
 pragma solidity ^0.8.27;
 
 import {Test} from "forge-std/Test.sol";
-import {DeploySv15Nft} from "../../script/DeploySv15Nft.s.sol";
-import {Sv15Nft} from "../../src/Sv15Nft.sol";
+import {DeploySv15Nft} from "../script/DeploySv15Nft.s.sol";
+import {Sv15Nft} from "../src/Sv15Nft.sol";
 
 /**
  * @title The test class to test the Sv15Nft token.

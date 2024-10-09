@@ -2,7 +2,7 @@
 pragma solidity ^0.8.27;
 
 import {Test, console} from "forge-std/Test.sol";
-import {MoodNft} from "../../src/MoodNft.sol";
+import {MoodNft} from "../src/MoodNft.sol";
 
 /**
  * @title The test class to test the Mood Nft token.

@@ -77,11 +77,15 @@ anvil
 # To check if the contract is ready to be deployed properly.
 forge script script/DeploySv15Nft.s.sol:DeploySv15Nft --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 
+forge script script/DeployMoodNft.s.sol:DeployMoodNft --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+
 # To actually deploy the contract to the local net
 forge script script/DeploySv15Nft.s.sol:DeploySv15Nft --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
 
 # OR if using Makefile (helps avoid writing the lengthy command over and over again)
 make deploy
+
+forge script script/DeployMoodNft.s.sol:DeployMoodNft --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
 ```
 
 ### Test the Deployed Contract
@@ -102,6 +106,16 @@ forge script script/Interactions.s.sol:MintSv15Nft --rpc-url $RPC_URL --private-
 
 # OR if using Makefile (helps avoid writing the lengthy command over and over again)
 make mint
+
+forge script script/Interactions.s.sol:MintMoodNft --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
+```
+
+#### Change the mood of the issued Mood NFTs
+
+```shell
+forge script script/Interactions.s.sol:flipMoodNft --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
+
+cast send <CONTRACT_ADDRESS> "flipMood(uint256)" 3 --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 ```
 
 ### Import the NFT in the Metamask Wallet
@@ -114,5 +128,11 @@ make mint
 Congratulations, your token is added to your account in the wallet.
 
 ![Metamask Screenshot](readme-imgs/metamask.png)
+
+![Metamask Screenshot after Adding MoodNfts](readme-imgs/metamask-mood-initial.png)
+
+Flip the mood, and then remove the added NFT, and re-add.
+
+![Metamask Screenshot after flipping the mood of one of the added MoodNfts](readme-imgs/metamask-mood-updated.png)
 
 **NOTE**: For this step to work, your local IPFS instance needs to be up and running OR else you might not be able to complete these steps.
