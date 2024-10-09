@@ -86,6 +86,9 @@ forge script script/DeploySv15Nft.s.sol:DeploySv15Nft --rpc-url $RPC_URL --priva
 make deploy
 
 forge script script/DeployMoodNft.s.sol:DeployMoodNft --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
+
+# OR 
+make deployMood
 ```
 
 ### Test the Deployed Contract
@@ -107,14 +110,19 @@ forge script script/Interactions.s.sol:MintSv15Nft --rpc-url $RPC_URL --private-
 # OR if using Makefile (helps avoid writing the lengthy command over and over again)
 make mint
 
+## For working with MoodNft
 forge script script/Interactions.s.sol:MintMoodNft --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
-```
 
-#### Change the mood of the issued Mood NFTs
+#OR
+make mintMoodNft
 
-```shell
+## For working with MoodNft
 forge script script/Interactions.s.sol:flipMoodNft --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
 
+# OR 
+make flipMoodNft
+
+# OR
 cast send <CONTRACT_ADDRESS> "flipMood(uint256)" 3 --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 ```
 
